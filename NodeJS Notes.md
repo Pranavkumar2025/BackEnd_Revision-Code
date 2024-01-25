@@ -437,7 +437,7 @@ theEmitter.emit('event');
 
 <!-- ------------------------------------------------------->
 
-# Express 
+# Express
 
 ```javascript
 const express = require('express');
