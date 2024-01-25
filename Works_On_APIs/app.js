@@ -1,46 +1,47 @@
-const URL = "https://cat-fact.herokuapp.com/facts";
 
-let fact = document.querySelector("#fact");
+const url = "https://cat-fact.herokuapp.com/facts";
 
-let btnfact = document.querySelector("#getFact");
 
+const fact = document.querySelector("#fact");
+
+const show = document.querySelector("#show");
+show.addEventListener('click',()=>{
+     getFact();
+});
 const getFact = async ()=>{
-    // console.log("Getting Data.....");
-    fact.innerHTML = "Getting Data.......";
+    
+    let resoponse = await fetch(url);
+    console.log(resoponse)
 
-    let resoponse = await fetch(URL);
-    // console.log(resoponse)
-    let mydata = await resoponse.json();
-    fact.innerHTML ="";
-
-    for(var i=0;i<mydata.length;i++){
-        fact.innerHTML += mydata[i].text + "<br>";
-    }
-
-
+    let readformat =await resoponse.json();
+    fact.innerHTML=readformat[1].text;
 }
-btnfact.addEventListener('click',getFact);
 
 
+
+// ------ Getting all the Text
 
 // const URL = "https://cat-fact.herokuapp.com/facts";
 
 // let fact = document.querySelector("#fact");
+
 // let btnfact = document.querySelector("#getFact");
 
-// const getFact = async () => {
+// const getFact = async ()=>{
+//     // console.log("Getting Data.....");
 //     fact.innerHTML = "Getting Data.......";
 
-//     let response = await fetch(URL);
-//     let data = await response.json();
+//     let resoponse = await fetch(URL);
+//     // console.log(resoponse)
+//     let mydata = await resoponse.json();
+//     fact.innerHTML ="";
 
-//     // Clear previous facts
-//     fact.innerHTML = "";
-
-//     for (var i = 0; i < data.length; i++) {
-//         // Concatenate facts
-//         fact.innerHTML += data[i].text + "<br>";
+//     for(var i=0;i<mydata.length;i++){
+//         fact.innerHTML += mydata[i].text + "<br>";
 //     }
-// };
 
-// btnfact.addEventListener('click', getFact);
+
+// }
+// btnfact.addEventListener('click',getFact);
+
+
