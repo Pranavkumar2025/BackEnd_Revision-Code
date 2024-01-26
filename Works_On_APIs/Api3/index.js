@@ -5,6 +5,8 @@ check.addEventListener("click", () => {
   checkfunc();
 });
 
+// ----------------------------------->> Here we are using API method by using both Methods------------------------
+
 let myApi = 'https://jsonplaceholder.typicode.com/posts';
 const checkfunc = async ()=>{
     console.log("Button is Clicked..");

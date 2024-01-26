@@ -1,47 +1,53 @@
 
-const url = "https://cat-fact.herokuapp.com/facts";
-
-
+const show = document.querySelector("#show");
 const fact = document.querySelector("#fact");
 
-const show = document.querySelector("#show");
 show.addEventListener('click',()=>{
-     getFact();
-});
+    getFact();
+})
 const getFact = async ()=>{
-    
-    let resoponse = await fetch(url);
-    console.log(resoponse)
+    const url = "https://api.openweathermap.org/data/2.5/weather?q=Kahalgaon&appid=82e0e6a5e2b7df2e56550b3c128289e6";
+    console.log("Button Clicked...");
 
-    let readformat =await resoponse.json();
-    fact.innerHTML=readformat[1].text;
+    const myurl = await fetch(url);
+    console.log(myurl);
+
+    const jsonUrl = await myurl.json();
+    console.log(jsonUrl.main)
+    console.log(jsonUrl.main.temp_min);
+
+    fact.innerHTML = `<h1>Min Temp is: ${(jsonUrl.main.feels_like-273.15)}'C</h1>` 
 }
 
 
 
-// ------ Getting all the Text
 
-// const URL = "https://cat-fact.herokuapp.com/facts";
 
-// let fact = document.querySelector("#fact");
 
-// let btnfact = document.querySelector("#getFact");
+// -------------------------->>> Showing New Motivational Quotes on every click on Button <<<--------------------------
 
-// const getFact = async ()=>{
-//     // console.log("Getting Data.....");
-//     fact.innerHTML = "Getting Data.......";
+// const url = "https://type.fit/api/quotes";
 
-//     let resoponse = await fetch(URL);
-//     // console.log(resoponse)
-//     let mydata = await resoponse.json();
-//     fact.innerHTML ="";
 
-//     for(var i=0;i<mydata.length;i++){
-//         fact.innerHTML += mydata[i].text + "<br>";
+// const fact = document.querySelector("#fact");
+// const myblock = document.querySelector('#myblock');
+
+// const show = document.querySelector("#show");
+// var i =0;
+
+// show.addEventListener('click',()=>{
+//     getFact();
+// });
+// const getFact =async ()=>{
+//     // console.log("Button clicked");
+//     const urldata = await fetch(url);
+//     const jsonData = await urldata.json();
+
+//     if (i < jsonData.length) {
+//         myblock.innerHTML = jsonData[i].text;
+//         i++; // Increment index for the next click
+//     } else {
+//         myblock.innerHTML = "Sorry.. 😲 No more quotes available.";
 //     }
-
-
 // }
-// btnfact.addEventListener('click',getFact);
-
 
