@@ -1,6 +1,14 @@
 
 
 const fs = require('fs');
+const url = require('url');
+
+
+const myUrl = new url('https://api.openweathermap.org/data/2.5/weather?q=kahalgaon&appid=82e0e6a5e2b7df2e56550b3c128289e6');
+
+console.log(myUrl)
+
+
 
 // fs.mkdir("For_Delet",()=>{});
 
