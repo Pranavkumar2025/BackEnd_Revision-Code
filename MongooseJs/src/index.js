@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/NewDataBaseForMe")
+mongoose.connect("mongodb://localhost:27017/MyDataBase")
 .then(()=>{console.log("Connection Succesfull..");})
 .catch((err)=>{console.log("Error is found....OOps")})
 
