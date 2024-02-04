@@ -6,13 +6,16 @@ mongoose.connect("mongodb://localhost:27017/instantDelete")
 .then(()=>{console.log("Connection succesfull..")})
 .catch((err)=>{console.log("Some error Occured in your program..",err)})
 
+// We can Create Mutliple Schema too.....
 
+// our first Schema
 const myfileSchema  = new mongoose.Schema({
     name : String,
     Age : Number,
     Branch : String,
     CRoll : Number
 })
+// our Second Schema
 const myfileSchema2 = new mongoose.Schema({
     name: String,
     Code: Number,
@@ -20,11 +23,12 @@ const myfileSchema2 = new mongoose.Schema({
 })
 
 
-const myfile = new mongoose.model("fileList1",myfileSchema);
-const myfile2 = new mongoose.model("fileList2",myfileSchema2);
+const myfile = new mongoose.model("fileList1",myfileSchema);//First Schema Models
+const myfile2 = new mongoose.model("fileList2",myfileSchema2);//Second Schema Models
 
 const createDocument = async()=>{
     try{
+        // Our First Schema Data
         const mydoc1 = new myfile({
             name: "Tutu Kumar",
             Age : 21,
@@ -55,6 +59,8 @@ const createDocument = async()=>{
             Branch: "CSE",
             CRoll : 61
         })
+
+        // Our Second Schema Data 
         const mydocA = new myfile2({
             name:"Pranav Kumar",
             Code: 3233,
@@ -65,14 +71,15 @@ const createDocument = async()=>{
             Code: 3233,
             Pin:3299
         })
+        //if we have only one data in our DataList
+            // const result = await mydoc1.save();
+
+        const result  = await myfile.insertMany([mydoc1,mydoc2,mydoc3,mydoc4,mydoc5])
+        const result2  = await myfile2.insertMany([mydocA,mydocB]);
 
 
-        const reuslt  = await myfile.insertMany([mydoc1,mydoc2,mydoc3,mydoc4,mydoc5])
-        const reuslt2  = await myfile2.insertMany([mydocA,mydocB]);
-
-
-        console.log(reuslt);
-        console.log(reuslt2);
+        console.log(result);
+        console.log(result2);
     }
     catch(err){console.log(err)}
 
