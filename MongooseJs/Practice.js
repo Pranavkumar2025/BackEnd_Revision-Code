@@ -77,7 +77,6 @@ const createDocument = async()=>{
         const result  = await myfile.insertMany([mydoc1,mydoc2,mydoc3,mydoc4,mydoc5])
         const result2  = await myfile2.insertMany([mydocA,mydocB]);
 
-
         console.log(result);
         console.log(result2);
     }
