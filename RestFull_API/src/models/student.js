@@ -67,8 +67,7 @@ module.exports = student;
 //         required: true
 //     }
 // });
-
-// // Now I will create a new model
+l
 
 // const Student = mongoose.model("Student", studentSchema); // Adjusted model name to start with uppercase
 
