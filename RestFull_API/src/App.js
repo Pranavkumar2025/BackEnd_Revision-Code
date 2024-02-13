@@ -6,6 +6,12 @@ const app = express();
 app.use(express.json());
 const port = process.env.PORT || 3000;
 
+app.get('/',(req,res)=>{
+    res.send("Hello Everyone This is for Testing....");
+})
+app.get('/student',(req,res)=>{
+    res.send(req.body); 
+})
 app.post('/student',(req,res)=>{
     console.log(req.body);
     const result = new student(req.body);

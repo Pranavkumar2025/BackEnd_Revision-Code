@@ -38,26 +38,26 @@ const createDocument = async()=>{
         const mydoc2 = new myfile({
             name: "Tutu Kumar",
             Age : 21,
-            Branch: "CSE",
-            CRoll : 61
+            Branch: "AIML",
+            CRoll : 25
         })
         const mydoc3 = new myfile({
-            name: "Tutu Kumar",
+            name: "Tipendra Kumar",
             Age : 21,
             Branch: "CSE",
             CRoll : 61
         })
         const mydoc4 = new myfile({
-            name: "Tutu Kumar",
-            Age : 21,
-            Branch: "CSE",
+            name: "Tutu Kumar Kushwaha",
+            Age : 23,
+            Branch: "AIML",
             CRoll : 61
         })
         const mydoc5 = new myfile({
-            name: "Tutu Kumar",
+            name: "Pranav kumar Kushwaha",
             Age : 21,
             Branch: "CSE",
-            CRoll : 61
+            CRoll : 12
         })
 
         // Our Second Schema Data 
@@ -67,18 +67,18 @@ const createDocument = async()=>{
             Pin:3299
         })
         const mydocB = new myfile2({
-            name:"Pranav Kumar",
-            Code: 3233,
-            Pin:3299
+            name:"Pranav Kumar Kushwaha",
+            Code: 3253,
+            Pin:329987
         })
         //if we have only one data in our DataList
             // const result = await mydoc1.save();
 
-        const result  = await myfile.insertMany([mydoc1,mydoc2,mydoc3,mydoc4,mydoc5])
-        const result2  = await myfile2.insertMany([mydocA,mydocB]);
+        // const result  = await myfile.insertMany([mydoc1,mydoc2,mydoc3,mydoc4,mydoc5])
+        // const result2  = await myfile2.insertMany([mydocA,mydocB]);
 
-        console.log(result);
-        console.log(result2);
+        // console.log(result);
+        // console.log(result2);
     }
     catch(err){console.log(err)}
 
