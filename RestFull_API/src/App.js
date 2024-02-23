@@ -22,6 +22,7 @@ app.post('/student',(req,res)=>{
     })
 })
 
+
 app.listen(port,()=>{
     console.log(`Server is Running at PORT ${port}....`);
 })

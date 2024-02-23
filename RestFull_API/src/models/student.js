@@ -29,7 +29,6 @@ const studentScehema = mongoose.Schema({
         required:true
     }
 })
-
 // Now i will create a new model
 const student = new mongoose.model("Student",studentScehema);
 
