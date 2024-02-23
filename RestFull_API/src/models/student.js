@@ -31,7 +31,6 @@ const studentScehema = mongoose.Schema({
 })
 
 // Now i will create a new model
-
 const student = new mongoose.model("Student",studentScehema);
 
 module.exports = student;
