@@ -1,30 +1,29 @@
-
-
 const btn = document.querySelector("#btn");
 const text = document.querySelector("#text");
 
-btn.addEventListener('click',()=>{
-    makerequest();
+btn.addEventListener("click", () => {
+  makerequest();
 });
 const url = "myfileq.txt";
 // ---------------------------->> using async await method <<---------------------------------
 
 // -> this method is simple and use to handle so that we genrally use this method for API calling
-const makerequest = async ()=>{
-    try{console.log("Button Clicked..");
+const makerequest = async () => {
+  try {
+    console.log("Button Clicked..");
     const urldata = await fetch(url);
-    if(!urldata.ok){
-        throw new Error(`Network response was not ok: ${urldata.status}`);
+    if (!urldata.ok) {
+      throw new Error(`Network response was not ok: ${urldata.status}`);
     }
     const readData = await urldata.text();
     console.log(readData);
     text.innerHTML = readData;
-    }catch(err){console.log('Error in making the request:', err);}
-
-}
+  } catch (err) {
+    console.log("Error in making the request:", err);
+  }
+};
 
 // ---------------------------->> using fetch catch method <<---------------------------------
-
 
 // -> this method is complex but sometime this is also used
 
@@ -47,4 +46,3 @@ const makerequest = async ()=>{
 //         console.error('Error in making the request:', error);
 //     }
 // };
-
