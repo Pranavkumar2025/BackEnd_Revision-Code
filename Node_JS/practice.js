@@ -1,11 +1,15 @@
-const express = require('express');
+const express = require ("express");
 
 const app = express();
 
-const PORT = 4000;
+app.get("/",(req,res)=>{
+    res.send("<h1>Hello Everyone and What is your name </h1>")
+})
 
-app.use(express.static('public'))
+app.get("/about",(req,res)=>{
+    res.send("<h1>Hello This is about page </h1>")
+})
 
-app.listen(PORT,()=>{
-    console.log("Server is Created at Port ",PORT);
+app.listen(3000,()=>{
+    console.log("Server is running at PORT 3000....");
 })
