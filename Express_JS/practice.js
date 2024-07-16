@@ -16,7 +16,7 @@ app.get('/users/:myid',(req,res)=>{
     const id = Number(req.params.myid);
     const userid = data.find((user)=>user.id === id);
 
-    return res.json(userid)
+    return res.json(userid) 
 
 
 })
