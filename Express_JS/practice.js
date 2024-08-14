@@ -12,14 +12,16 @@ app.get('/users',(req,res)=>{
     return res.json(data)
 
 })
-app.get('/users/:myid',(req,res)=>{
-    const id = Number(req.params.myid);
-    const userid = data.find((user)=>user.id === id);
+// app.get('/users/:myid',(req,res)=>{
+//     const id = Number(req.params.myid);
+//     const userid = data.find((user)=>user.id === id);
 
-    return res.json(userid) 
+//     console.log(id);
+
+//     return res.json(userid) 
 
 
-})
+// })
 
 app.get('/users/name',(req,res)=>{
 
@@ -32,6 +34,11 @@ app.get('/users/name',(req,res)=>{
 
 
 app.route('/users/:id').get((req,res)=>{
+
+    const myid = req.params.id;
+    const newdata = data.find((value)=> value.id == myid);
+    console.log(myid)
+    res.json(newdata)
     
 })
 
