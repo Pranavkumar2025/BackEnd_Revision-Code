@@ -9,21 +9,19 @@ const url = 'data.json';
 btn.addEventListener('click',()=>{
     myFunc();
 })
-const myFunc =async ()=>{
-    try{
-        const data = await fetch(url);
-        const textdata = await data.json();
 
-        console.log(data)
-        text.innerHTML= `<h1> Name is ${textdata.name} : Nick name is : ${textdata.nickName}`
-
-        return data;
-    }
-    catch(err){
-        console.log("You have Error in your Code");
+const myFunc = async ()=>{
+    try {
+        const myurl = await fetch(url);
+        if(!myurl.ok){
+            throw Error(myurl.statusText);
+        }
+        const urldata = await myurl.json();
+        console.log(urldata.name);
+    } catch (error) {
+        console.log(error);
     }
 }
-
 
 
 

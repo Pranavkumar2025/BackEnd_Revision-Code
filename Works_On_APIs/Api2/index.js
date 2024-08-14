@@ -1,4 +1,4 @@
-let check = document.querySelector('#check');
+check = document.querySelector('#check');
 let text = document.querySelector("#text");
 check.addEventListener('click',()=>{
     checkfunc();
@@ -21,3 +21,4 @@ const checkfunc =async ()=>{
     }
     catch(err){console.log(" Error...")};
 }
+

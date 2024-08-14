@@ -8,8 +8,6 @@ const myUrl = new url('https://api.openweathermap.org/data/2.5/weather?q=kahalga
 
 console.log(myUrl)
 
-
-
 // fs.mkdir("For_Delet",()=>{});
 
 // fs.writeFile("./For_Delet/bio.txt","Hello this a file",(err,data)=>{
