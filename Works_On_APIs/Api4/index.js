@@ -5,7 +5,7 @@ check.addEventListener("click", () => {
 });
 // -------------------->> this is the Method of POST data from our Website to the server <<-----------------------------------
                    
-            //    here we can sed our {myInit} data to the web server {https://reqres.in/api/users} 
+            //    here we can send our {myInit} data to the web server {https://reqres.in/api/users} 
 const checkfunc =async ()=>{
     console.log("My Button Clicked...");
     try{
